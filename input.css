@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Toàn bộ hiệu ứng dùng Tailwind; tôn trọng thiết lập giảm chuyển động. */
+@layer components {
+    html {
+        @apply motion-safe:scroll-smooth;
+    }
+    .button,
+    .text-link,
+    .icon-button,
+    .category-tabs a,
+    .admin-sidebar nav a {
+        @apply motion-safe:transition-colors motion-safe:duration-200;
+    }
+    .food-card,
+    .cuisine-tile,
+    .moment-feature,
+    .moment-small {
+        @apply motion-safe:transition-transform motion-safe:duration-200 motion-safe:hover:-translate-y-1;
+    }
+    .food-card-image img,
+    .cuisine-tile img {
+        @apply motion-safe:transition-transform motion-safe:duration-300;
+    }
+    .food-card-image:hover img,
+    .cuisine-tile:hover img {
+        @apply motion-safe:scale-105;
+    }
+    .search-dialog,
+    .toast,
+    .flavour-panel:not([hidden]) {
+        @apply motion-safe:animate-soft-in;
+    }
+}

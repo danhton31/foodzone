@@ -1,0 +1,7 @@
+Options -Indexes
+DirectoryIndex index.php
+RedirectMatch 404 "(^|/)\."
+RedirectMatch 404 "^/(?:app|database|docs|scripts|node_modules)(?:/|$)"
+<FilesMatch "^(\.env.*|.*\.sql|.*\.log|package(-lock)?\.json)$">
+    Require all denied
+</FilesMatch>
